@@ -1,0 +1,31 @@
+<html ng-app="app">
+  <head>
+    <meta charset="utf-8">
+    <title>Image</title>
+    <link rel="stylesheet" type="text/css" href="image.css">
+    <script src="./browserMqtt.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
+  </head>
+  <body ng-controller="controller">
+    <img id="inner" ng-src="{{url}}"/>
+
+    <script>
+
+      var appModule = angular.module("app", []);
+      appModule.controller("controller", ['$scope', function($scope) {
+        var serverIp = location.host.split(':')[0];
+        var client = mqtt.connect('ws://' + serverIp + ':11883');
+        client.subscribe("image-rx");
+
+        client.on("message", function (topic, payload) {
+          var command = JSON.parse(payload);
+          $scope.url = command.url;
+          $scope.$apply();
+        })
+
+        client.publish("image-rx", JSON.stringify({url: "./images/test.jpg"}));
+      }]);
+    </script>
+
+  </body>
+</html>
