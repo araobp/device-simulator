@@ -22,10 +22,6 @@ Refer to the following links for mosquitto and browserMqtt.js:
 
 [sample](./index.html)
 
-### Elevator
-
-[elavator](./elevator.html)
-
 ### Display
 
 [display](./display.html)
@@ -38,6 +34,9 @@ Refer to the following links for mosquitto and browserMqtt.js:
 
 [video](./video.html)
 
+### Elevator
+
+[elavator](./elevator.html)
 
 ## Working with one-liner HTTP server
 
