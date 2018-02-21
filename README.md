@@ -13,9 +13,7 @@ Refer to the following links for mosquitto and browserMqtt.js:
 ## Architecture
 
 ```
-[Script    ]                                         [Device simulator node]  
-[AngularJS ]---mqtt/WebSocket---[mosquitto]---mqtt---[mqtt client          ]
-[HTML5/CSS3]                                         [Node-RED             ]
+[Device simulator]---mqtt/WebSocket---[mosquitto]---mqtt---[mqtt client as remote controller]
 ```
 
 ### Hello World
