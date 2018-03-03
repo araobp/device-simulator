@@ -13,7 +13,12 @@ Refer to the following links for mosquitto and browserMqtt.js:
 ## Architecture
 
 ```
+   HTTP GET to download the HTML5 page
+        + - - - - - - - - - - - - - -[HTTP server]
+        |
+        v
 [Device simulator]---mqtt/WebSocket---[mosquitto]---mqtt---[mqtt client as remote controller]
+     (HTML5)
 ```
 
 ### Hello World
